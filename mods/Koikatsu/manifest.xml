@@ -1,0 +1,9 @@
+<manifest schema-ver="1">
+	<guid>IllusionMods.InvisibleBodyAccessories</guid>
+	<name>Invisible Body Accessories</name>
+	<version>1.0</version>
+	<author>DeathWeasel</author>
+	<description>Accessories that hide the body when worn</description>
+	<website>https://github.com/IllusionMods/InvisibleBody</website>
+	<game>Koikatsu</game>
+</manifest>
