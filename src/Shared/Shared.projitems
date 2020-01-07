@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.CharaController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBodyItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.PluginBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.Hooks.cs" />
   </ItemGroup>
