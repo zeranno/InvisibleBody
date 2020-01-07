@@ -9,6 +9,6 @@
     <Import_RootNamespace>Shared.Studio</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Shared.StudioPluginBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.PluginStudioBase.cs" />
   </ItemGroup>
 </Project>
