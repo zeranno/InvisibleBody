@@ -7,7 +7,7 @@
     <ProjectGuid>{9A354B7C-7F6F-4B02-9174-C7F6E94DDD4C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IllusionMods</RootNamespace>
+    <RootNamespace>IllusionMods.InvisibleBody</RootNamespace>
     <AssemblyName>KK_InvisibleBody</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -72,13 +72,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KK.InvisibleBody.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="KK.InvisibleBody.Maker.cs" />
+    <Compile Include="KK.InvisibleBody.Studio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" />
   <Import Project="..\Shared.Studio\Shared.Studio.projitems" Label="Shared" />
+  <Import Project="..\Shared.Maker\Shared.Maker.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF EXIST $(SolutionDir)PostBuild.bat CALL "$(SolutionDir)PostBuild.bat" $(TargetPath) KK</PostBuildEvent>

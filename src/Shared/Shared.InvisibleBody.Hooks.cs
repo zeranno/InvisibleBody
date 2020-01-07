@@ -3,18 +3,15 @@
 using AIChara;
 #endif
 
-namespace IllusionMods
+namespace IllusionMods.InvisibleBody
 {
-    public partial class InvisibleBody
+    internal static class Hooks
     {
-        internal static class Hooks
-        {
-            /// <summary>
-            /// For changing head shape. Also for low poly.
-            /// </summary>
-            /// <param name="__instance"></param>
-            [HarmonyPostfix, HarmonyPatch(typeof(ChaControl), nameof(ChaControl.InitShapeFace))]
-            internal static void InitShapeFace(ChaControl __instance) => GetController(__instance).UpdateVisible(true);
-        }
+        /// <summary>
+        /// For changing head shape. Also for low poly.
+        /// </summary>
+        /// <param name="__instance"></param>
+        [HarmonyPostfix, HarmonyPatch(typeof(ChaControl), nameof(ChaControl.InitShapeFace))]
+        internal static void InitShapeFace(ChaControl __instance) => PluginBase.GetController(__instance).UpdateVisible(true);
     }
 }

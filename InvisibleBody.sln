@@ -13,13 +13,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EC_InvisibleBody", "src\EC_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI_InvisibleBody", "src\AI_InvisibleBody\AI_InvisibleBody.csproj", "{8A906870-1EA8-4B93-BD1C-01B1C5D73452}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Maker", "src\Shared.Maker\Shared.Maker.shproj", "{0E0F02AD-8C98-400F-A299-0537691FEC4F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared.Maker\Shared.Maker.projitems*{0e0f02ad-8c98-400f-a299-0537691fec4f}*SharedItemsImports = 13
 		src\Shared\Shared.projitems*{1347fd5d-fc0c-467e-841f-8da77ea052f0}*SharedItemsImports = 13
+		src\Shared.Maker\Shared.Maker.projitems*{39cccdc8-ed47-408e-90bd-5e540cb1b9d9}*SharedItemsImports = 4
 		src\Shared\Shared.projitems*{39cccdc8-ed47-408e-90bd-5e540cb1b9d9}*SharedItemsImports = 4
 		src\Shared.Studio\Shared.Studio.projitems*{6e912e9e-bd3c-4c7d-a6f3-42bcee0da2af}*SharedItemsImports = 13
+		src\Shared.Maker\Shared.Maker.projitems*{8a906870-1ea8-4b93-bd1c-01b1c5d73452}*SharedItemsImports = 4
 		src\Shared.Studio\Shared.Studio.projitems*{8a906870-1ea8-4b93-bd1c-01b1c5d73452}*SharedItemsImports = 4
 		src\Shared\Shared.projitems*{8a906870-1ea8-4b93-bd1c-01b1c5d73452}*SharedItemsImports = 4
+		src\Shared.Maker\Shared.Maker.projitems*{9a354b7c-7f6f-4b02-9174-c7f6e94ddd4c}*SharedItemsImports = 4
 		src\Shared.Studio\Shared.Studio.projitems*{9a354b7c-7f6f-4b02-9174-c7f6e94ddd4c}*SharedItemsImports = 4
 		src\Shared\Shared.projitems*{9a354b7c-7f6f-4b02-9174-c7f6e94ddd4c}*SharedItemsImports = 4
 	EndGlobalSection

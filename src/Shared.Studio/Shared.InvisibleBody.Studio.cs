@@ -4,15 +4,15 @@ using KKAPI.Studio.UI;
 using Studio;
 using UniRx;
 
-namespace IllusionMods
+namespace IllusionMods.InvisibleBody
 {
-    public partial class InvisibleBody
+    public class StudioPluginBase : BaseUnityPlugin
     {
-        internal void Main()
-        {
-            if (StudioAPI.InsideStudio)
-                RegisterStudioControls();
-        }
+        public const string GUID = PluginBase.GUID + "studio";
+        public const string PluginName = PluginBase.PluginName + " Studio UI";
+        public const string Version = PluginBase.Version;
+
+        internal void Start() => RegisterStudioControls();
 
         private static void RegisterStudioControls()
         {

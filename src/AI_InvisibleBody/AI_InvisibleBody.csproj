@@ -7,7 +7,7 @@
     <ProjectGuid>{8A906870-1EA8-4B93-BD1C-01B1C5D73452}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IllusionMods</RootNamespace>
+    <RootNamespace>IllusionMods.InvisibleBody</RootNamespace>
     <AssemblyName>AI_InvisibleBody</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -78,13 +78,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.InvisibleBody.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AI.InvisibleBody.Studio.cs" />
+    <Compile Include="AI.InvisibleBody.Maker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" />
   <Import Project="..\Shared.Studio\Shared.Studio.projitems" Label="Shared" />
+  <Import Project="..\Shared.Maker\Shared.Maker.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF EXIST $(SolutionDir)PostBuild.bat CALL "$(SolutionDir)PostBuild.bat" $(TargetPath) AI</PostBuildEvent>

@@ -9,6 +9,9 @@
     <Import_RootNamespace>Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.CharaController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.Hooks.cs" />
   </ItemGroup>
