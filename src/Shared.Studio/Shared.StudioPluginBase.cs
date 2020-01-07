@@ -6,6 +6,9 @@ using UniRx;
 
 namespace IllusionMods.InvisibleBody
 {
+    /// <summary>
+    /// Studio UI code
+    /// </summary>
     public class StudioPluginBase : BaseUnityPlugin
     {
         public const string GUID = PluginBase.GUID + "studio";

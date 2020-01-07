@@ -9,7 +9,7 @@ using AIChara;
 namespace IllusionMods.InvisibleBody
 {
     /// <summary>
-    /// Sets the selected characters invisible in Studio or character maker. Invisible state saves and loads with the scene or card.
+    /// Character maker UI code
     /// </summary>
     public class PluginMakerBase : BaseUnityPlugin
     {
