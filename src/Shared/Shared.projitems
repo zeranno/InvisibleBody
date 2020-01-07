@@ -11,8 +11,8 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shared.Constants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.CharaController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.Hooks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.CharaController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.PluginBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.Hooks.cs" />
   </ItemGroup>
 </Project>

@@ -37,7 +37,7 @@ namespace IllusionMods.InvisibleBody
             Instance = this;
             Logger = base.Logger;
 
-            CharacterApi.RegisterExtraBehaviour<InvisibleBodyCharaController>(PluginDataID);
+            CharacterApi.RegisterExtraBehaviour<CharaController>(PluginDataID);
 
             HarmonyWrapper.PatchAll(typeof(Hooks));
         }
@@ -45,6 +45,6 @@ namespace IllusionMods.InvisibleBody
         /// <summary>
         /// Get the InvisibleBodyCharaController for the character
         /// </summary>
-        public static InvisibleBodyCharaController GetController(ChaControl character) => character?.gameObject?.GetComponent<InvisibleBodyCharaController>();
+        public static CharaController GetController(ChaControl character) => character?.gameObject?.GetComponent<CharaController>();
     }
 }

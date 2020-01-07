@@ -16,7 +16,7 @@ namespace IllusionMods.InvisibleBody
 
         private static void RegisterStudioControls()
         {
-            var invisibleSwitch = new CurrentStateCategorySwitch("Invisible Body", controller => controller.charInfo.GetComponent<InvisibleBodyCharaController>().Invisible);
+            var invisibleSwitch = new CurrentStateCategorySwitch("Invisible Body", controller => controller.charInfo.GetComponent<CharaController>().Invisible);
             invisibleSwitch.Value.Subscribe(Observer.Create((bool value) =>
             {
                 var controller = GetSelectedStudioController();
@@ -27,6 +27,6 @@ namespace IllusionMods.InvisibleBody
             StudioAPI.GetOrCreateCurrentStateCategory("").AddControl(invisibleSwitch);
         }
 
-        private static InvisibleBodyCharaController GetSelectedStudioController() => FindObjectOfType<MPCharCtrl>()?.ociChar?.charInfo?.GetComponent<InvisibleBodyCharaController>();
+        private static CharaController GetSelectedStudioController() => FindObjectOfType<MPCharCtrl>()?.ociChar?.charInfo?.GetComponent<CharaController>();
     }
 }

@@ -11,7 +11,7 @@ using AIChara;
 
 namespace IllusionMods.InvisibleBody
 {
-    public class InvisibleBodyCharaController : CharaCustomFunctionController
+    public class CharaController : CharaCustomFunctionController
     {
         private bool _visible = true;
         /// <summary>

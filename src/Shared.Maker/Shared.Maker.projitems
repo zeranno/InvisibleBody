@@ -9,6 +9,6 @@
     <Import_RootNamespace>Shared.Maker</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Shared.InvisibleBody.Maker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shared.PluginMakerBase.cs" />
   </ItemGroup>
 </Project>
