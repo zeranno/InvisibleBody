@@ -13,7 +13,7 @@ namespace IllusionMods.InvisibleBody
         }
 
         /// <summary>
-        /// Activates effect when accessory is on.
+        /// Activates effect when accessory is on. Current effect is just a message.
         /// </summary>
         private void OnEnable()
         {
@@ -21,7 +21,7 @@ namespace IllusionMods.InvisibleBody
         }
 
         /// <summary>
-        /// Disables effect when accessory is off.
+        /// Disables effect when accessory is off. Current effect is just a message.
         /// </summary>
         private void OnDisable()
         {
