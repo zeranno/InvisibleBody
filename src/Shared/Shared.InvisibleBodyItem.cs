@@ -1,4 +1,13 @@
+using ExtensibleSaveFormat;
+using KKAPI;
+using KKAPI.Chara;
+using System.Collections;
+using System.Linq;
+using UniRx;
 using UnityEngine;
+#if AI
+using AIChara;
+#endif
 
 namespace IllusionMods.InvisibleBody
 {
@@ -10,22 +19,31 @@ namespace IllusionMods.InvisibleBody
         internal void Start()
         {
             PluginBase.Logger.LogMessage($"InvisibleBodyItem Start");
+            var chaControl = GetComponentInParent<ChaControl>();
+            var charaController = PluginBase.GetController(chaControl);
+            charaController.Invisible = true;
         }
 
         /// <summary>
-        /// Activates effect when accessory is on. Current effect is just a message.
+        /// Activates effect when accessory is on.
         /// </summary>
         private void OnEnable()
         {
-            PluginBase.Logger.LogMessage($"Test On");
+            PluginBase.Logger.LogMessage($"InvisibleBodyItem On");
+            var chaControl = GetComponentInParent<ChaControl>();
+            var charaController = PluginBase.GetController(chaControl); 
+            charaController.Invisible = true;
         }
 
         /// <summary>
-        /// Disables effect when accessory is off. Current effect is just a message.
+        /// Disables effect when accessory is off.
         /// </summary>
         private void OnDisable()
         {
-            PluginBase.Logger.LogMessage($"Test Off");
+            PluginBase.Logger.LogMessage($"InvisibleBodyItem Off");
+            var chaControl = GetComponentInParent<ChaControl>();
+            var charaController = PluginBase.GetController(chaControl);
+            charaController.Invisible = false;
         }
     }
 }
