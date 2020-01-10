@@ -21,7 +21,6 @@ namespace IllusionMods.InvisibleBody
                 _visstate = false;
             else
                 _visstate = true;
-
         }
 
         private bool _accvisible = true;
