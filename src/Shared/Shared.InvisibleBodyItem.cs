@@ -13,37 +13,50 @@ namespace IllusionMods.InvisibleBody
 {
     class InvisibleBodyItem : MonoBehaviour
     {
+        int InvAccCount = 0;
+
         /// <summary>
-        /// Sends a message to log when accessory is first added.
+        /// Loads effect when accessory is added
         /// </summary>
         internal void Start()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem Start");
-            var chaControl = GetComponentInParent<ChaControl>();
-            var charaController = PluginBase.GetController(chaControl);
-            charaController.Invisible = true;
+            InvAccCount += 1;
+            PluginBase.Logger.LogMessage($"InvisibleBodyItem Start" + InvAccCount);
+            InvAccCounter();
         }
 
         /// <summary>
-        /// Activates effect when accessory is on.
+        /// Activates effect when accessory is unhidden but not when first loaded
         /// </summary>
         private void OnEnable()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem On");
             var chaControl = GetComponentInParent<ChaControl>();
-            var charaController = PluginBase.GetController(chaControl); 
-            charaController.Invisible = true;
+            var charaController = PluginBase.GetController(chaControl);
+            if (chaControl == null) return;
+            else
+                InvAccCount += 1;
+                PluginBase.Logger.LogMessage($"InvisibleBodyItem On" + InvAccCount);
+                InvAccCounter();
         }
 
         /// <summary>
-        /// Disables effect when accessory is off.
+        /// Disables effect when accessory is hidden
         /// </summary>
         private void OnDisable()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem Off");
+            InvAccCount -= 1;
+            PluginBase.Logger.LogMessage($"InvisibleBodyItem Off" + InvAccCount);
+            InvAccCounter();
+        }
+
+        private void InvAccCounter()
+        {
             var chaControl = GetComponentInParent<ChaControl>();
-            var charaController = PluginBase.GetController(chaControl);
-            charaController.Invisible = false;
+            var charaController = PluginBase.GetController(chaControl); 
+            if (InvAccCount > 0)
+                charaController.AccVisible = false;
+            else
+                charaController.AccVisible = true;
         }
     }
 }
