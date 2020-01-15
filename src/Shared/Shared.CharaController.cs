@@ -1,4 +1,4 @@
-﻿using ExtensibleSaveFormat;
+using ExtensibleSaveFormat;
 using KKAPI;
 using KKAPI.Chara;
 using System.Collections;
@@ -13,6 +13,35 @@ namespace IllusionMods.InvisibleBody
 {
     public class CharaController : CharaCustomFunctionController
     {
+        private bool _visstate = true;
+
+        public void VisState()
+        {
+            if (AccVisible == false || Visible == false)
+            
+                _visstate = false;
+            else
+                _visstate = true;
+        }
+
+        private bool _accvisible = true;
+        /// <summary>
+        /// Gets or sets the visible state of a character
+        /// </summary>
+        public bool AccVisible
+        {
+            get => _accvisible;
+            set
+            {
+                _accvisible = value;
+                VisState();
+                SetVisibleState();
+            }
+        }
+        /// <summary>
+        /// Same thing as Visible except backwards. Because logic is hard.
+        /// </summary>
+
         private bool _visible = true;
         /// <summary>
         /// Gets or sets the visible state of a character
@@ -23,6 +52,7 @@ namespace IllusionMods.InvisibleBody
             set
             {
                 _visible = value;
+                VisState();
                 SetVisibleState();
             }
         }
@@ -33,6 +63,21 @@ namespace IllusionMods.InvisibleBody
         {
             get => !Visible;
             set => Visible = !value;
+        }
+
+        public int InvAccCount = 0;
+
+        public void InvAccCounter()
+        {
+            var chaControl = GetComponentInParent<ChaControl>();
+            var charaController = PluginBase.GetController(chaControl);
+            if (InvAccCount > 0)
+            {
+                charaController.AccVisible = false;
+                PluginBase.Logger.LogMessage($"InvisibleBodyItem Off" + InvAccCount);
+            } else
+                charaController.AccVisible = true;
+                PluginBase.Logger.LogMessage($"InvisibleBodyItem Off" + InvAccCount);
         }
 
         protected override void OnCardBeingSaved(GameMode currentGameMode)
@@ -84,7 +129,7 @@ namespace IllusionMods.InvisibleBody
         private void SetVisibleState()
         {
             //Don't set the visible state if it is already set
-            if (ChaControl?.objBody?.GetComponentsInChildren<SkinnedMeshRenderer>(true).FirstOrDefault(x => x.name == "o_body_a" || x.name == "o_body_cf" || x.name == "o_body_cm")?.GetComponent<Renderer>().enabled == Visible)
+            if (ChaControl?.objBody?.GetComponentsInChildren<SkinnedMeshRenderer>(true).FirstOrDefault(x => x.name == "o_body_a" || x.name == "o_body_cf" || x.name == "o_body_cm")?.GetComponent<Renderer>().enabled == _visstate)
                 return;
 
 #if AI
@@ -157,7 +202,7 @@ namespace IllusionMods.InvisibleBody
             {
                 if (PluginBase.Instance.RendererBlacklist.Contains(rend.name))
                     return;
-                rend.enabled = Visible;
+                rend.enabled = _visstate;
             }
         }
         /// <summary>
