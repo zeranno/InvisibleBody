@@ -14,36 +14,38 @@ namespace IllusionMods.InvisibleBody
     class InvisibleBodyItem : MonoBehaviour
     {
         /// <summary>
-        /// Sends a message to log when accessory is first added.
+        /// Loads effect when accessory is added
         /// </summary>
         internal void Start()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem Start");
             var chaControl = GetComponentInParent<ChaControl>();
             var charaController = PluginBase.GetController(chaControl);
-            charaController.Invisible = true;
+            charaController.InvAccCount += 1;
+            charaController.InvAccCounter();
         }
 
         /// <summary>
-        /// Activates effect when accessory is on.
+        /// Activates effect when accessory is unhidden but not when first loaded
         /// </summary>
         private void OnEnable()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem On");
             var chaControl = GetComponentInParent<ChaControl>();
-            var charaController = PluginBase.GetController(chaControl); 
-            charaController.Invisible = true;
+            var charaController = PluginBase.GetController(chaControl);
+            if (chaControl == null) return;
+            else
+                charaController.InvAccCount += 1;
+                charaController.InvAccCounter();
         }
 
         /// <summary>
-        /// Disables effect when accessory is off.
+        /// Disables effect when accessory is hidden
         /// </summary>
         private void OnDisable()
         {
-            PluginBase.Logger.LogMessage($"InvisibleBodyItem Off");
             var chaControl = GetComponentInParent<ChaControl>();
             var charaController = PluginBase.GetController(chaControl);
-            charaController.Invisible = false;
+            charaController.InvAccCount -= 1;
+            charaController.InvAccCounter();
         }
     }
 }
